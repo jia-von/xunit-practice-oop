@@ -23,7 +23,13 @@ namespace XUnitOOPPractice
             {
                 _price = ComboItems.Sum(x => x.Price)*0.8;
             }
-         }
+        }
+
+        public Combo()
+        {
+            ComboItems = new List<FoodItem>();
+            Price = 0;
+        }
 
     }
 }
