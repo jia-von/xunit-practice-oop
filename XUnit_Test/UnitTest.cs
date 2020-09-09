@@ -1,9 +1,10 @@
 using System;
 using Xunit;
+using XUnitOOPPractice;
 
-namespace XUnitTest
+namespace XUnit_Test
 {
-    public class UnitTest1
+    public class UnitTest
     {
         [Fact]
         public void Test1()
