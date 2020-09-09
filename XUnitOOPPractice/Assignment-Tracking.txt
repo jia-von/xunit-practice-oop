@@ -1,0 +1,39 @@
+﻿Create a new solution with an XUnitOOPPractice console application. -- Completed---
+
+Add a second XUnit Test project to the solution called XUnitOOPPractice_Tests. --Completed and referenced----
+
+Add an assembly reference from the XUnit project to the console application. ---Completed added Xunit to the project----
+
+Create a public abstract class called MenuItem with the following properties: -- Completed, public abstract class----
+		Price (double, abstract)
+
+Create inherited classes from MenuItem called “FoodItem” and “Combo” --Completed created inherited class----
+		ComboItem should have a polymorphic list property of FoodItems called “ComboItems”. ---Completed-----
+		ComboItem’s Price should be a sum of all of the combo Items prices, minus 20%. -----Completed--------
+
+		FoodItem’s Price should be a normal double. ---Completed-----
+		FoodItem should have a “Type” enum of: ---Completed-----
+				FrenchFries
+				ChickenStrips
+				Drink
+
+---COMPLETED FOR PUBLIC CLASS ORDER--------------------------------------------------
+Create a public class called Order with the following properties / methods: --Completed----
+		Items (private polymorphic list)
+		ItemCount (int), a function of the count of the items.
+		AddItem()
+				Accepts polymorphic argument and adds it to the list
+				If an item is added, and because of that addition there is an instance of each food item (Fries, Chicken Strips and Drink), then add all three to a new ComboItem. Remove the items from the Items list, and add the Combo to the Items list.
+				RemoveItem()
+
+		Removes the most recent addition to the Items list, if it’s a combo, remove the whole combo.
+		Total (double), a function of the sum of all of the prices in Items.
+
+----------COMPLETED FOR PUBLIC CLASS ORDER--------------------------------------------------
+
+Create unit tests to test the following behaviour:
+Adding a single item of each type to the order (3 facts).
+Add a combo to the order (fact).
+Remove a single item from the order (fact).
+Remove a combo from the order (fact).
+The ComboItem’s Price reflects the sum of the items minus 20% (theory).
