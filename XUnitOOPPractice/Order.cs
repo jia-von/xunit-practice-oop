@@ -7,39 +7,65 @@ namespace XUnitOOPPractice
 {
     public class Order //Create a public class called Order with the following properties / methods:
     {
-        private List<FoodItem> Items { get; set; } //Items (private polymorphic list)
+        public List<MenuItem> Items { get; set; }
+
+        public int ItemCount => Items.Count;
+
+        public double Total => Items.Select(x => x.Price).Sum();
+
+        public void AddItem(MenuItem toAdd)
+        {
+            // Refactoring idea courtesy of Damir.
+            Items.Add(toAdd);
+
+            // If we have 3 distinct types of food...
+            if (Items.Where(x => x.GetType() == typeof(FoodItem)).Select(x => ((FoodItem)x).Type).Distinct().Count() == 3)
+            {
+                // Select the first of each type of food.
+                FoodItem chicken = (FoodItem)Items.Where(x => x.GetType() == typeof(FoodItem) && ((FoodItem)x).Type == FoodItem.TypeValue.ChickenStrips).First();
+                FoodItem drink = (FoodItem)Items.Where(x => x.GetType() == typeof(FoodItem) && ((FoodItem)x).Type == FoodItem.TypeValue.Drink).First();
+                FoodItem fries = (FoodItem)Items.Where(x => x.GetType() == typeof(FoodItem) && ((FoodItem)x).Type == FoodItem.TypeValue.FrenchFries).First();
+
+                /*
+                --- Cast the result of everything following this to a FoodItem (otherwise it returns a MenuItem). ---
+                (FoodItem)
+                --- Operating on the Items list ---
+                Items
+                --- Using Where to filter things out ---
+                .Where(
+                    --- Filtering out non-FoodItems (Combos), this needs to first because otherwise we will be trying to potentially cast Combos as FoodItems and it will not be happy ---
+                    x => x.GetType() == typeof(FoodItem) &&
+                    --- AND Filtering out non-FrenchFries FoodItems ---
+                    ((FoodItem)x).Type == FoodItem.TypeValue.FrenchFries
+                    )
+                --- Get the first item that is returned from the Where ---
+                .First()
+                */
+
+
+                // Build the combo.
+                Combo newCombo = new Combo()
+                {
+                    ComboItems = new List<FoodItem>() { chicken, fries, drink }
+                };
+
+                // Remove the combo items from the Items list.
+                Items = Items.Except(newCombo.ComboItems).ToList();
+
+                // Add the combo to the list.
+                Items.Add(newCombo);
+            }
+        }
+
+        public void RemoveItem()
+        {
+            // Removes the last items in the list (most recent addition, assuming you don't sort the list).
+            Items.RemoveAt(Items.Count - 1);
+        }
 
         public Order()
         {
-            Items = new List<FoodItem>();
-        }
-
-        public int ItemCount() //ItemCount (int), a function of the count of the items.
-        {
-            return Items.Count;
-        }
-        /*
-            If an item is added, and because of that addition there is an instance of each food item (Fries, Chicken Strips and Drink), then add all three to a new ComboItem. Remove the items from the Items list, and add the Combo to the Items list.
-         */
-        public void AddItem(FoodItem foodItem)//AddItem(): Accepts polymorphic argument and adds it to the list
-        {
-            ItemCount();
-            if(ItemCount() == 3)
-            {
-                Combo temp = new Combo();
-                
-
-            }
-            Items.Add(foodItem);
-        }
-
-        public void RemoveItem()//RemoveItem(): Removes the most recent addition to the Items list, if it’s a combo, remove the whole combo.
-        {
-
-        }
-        public void Total()//Total (double), a function of the sum of all of the prices in Items.
-        {
-
+            Items = new List<MenuItem>();
         }
     }
 }

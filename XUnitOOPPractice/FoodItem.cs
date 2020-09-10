@@ -6,14 +6,13 @@ namespace XUnitOOPPractice
 {
     public class FoodItem : MenuItem //Create inherited classes from MenuItem called “FoodItem” and “Combo”
     {
-        public override double Price { get; set; } //FoodItem’s Price should be a normal double.
-
-        //FoodItem should have a “Type” enum of: FrenchFries, ChickenStrips, Drink
-        public enum FoodType 
+        public enum TypeValue
         {
             FrenchFries,
-            ChickenStrips,
-            Drink
+            Drink,
+            ChickenStrips
         }
+        public TypeValue Type { get; set; }
+        override public double Price { get; set; }
     }
 }

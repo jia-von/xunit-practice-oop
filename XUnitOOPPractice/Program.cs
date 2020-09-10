@@ -6,7 +6,6 @@ namespace XUnitOOPPractice
     {
         static void Main(string[] args)
         {
-            Order newOrder = new Order();
 
         }
     }
