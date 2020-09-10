@@ -80,5 +80,18 @@ namespace XUnit_Test
 
             Assert.Equal(2, newOrder.ItemCount);  //It should be empty 
         }
+
+        [Theory,
+            InlineData(1, 2, 3),
+            InlineData(10, 10, 10)]
+        public void Add_ComboPrice_Test(double one, double two, double three)// The Combo’s Price reflects the sum of the items minus 20% (theory).
+        {
+            Order newOrder = new Order();
+            newOrder.AddItem(new FoodItem() { Type = FoodItem.TypeValue.ChickenStrips, Price = one });
+            newOrder.AddItem(new FoodItem() { Type = FoodItem.TypeValue.FrenchFries, Price = two });
+            newOrder.AddItem(new FoodItem() { Type = FoodItem.TypeValue.Drink, Price = three });
+            double testSum = (one + two + three)*0.8;
+            Assert.Equal(testSum, newOrder.Total);
+        }
     }
 }
