@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 using XUnitOOPPractice;
@@ -60,6 +61,24 @@ namespace XUnit_Test
             newOrder.AddItem(new FoodItem() { Type = FoodItem.TypeValue.FrenchFries, Price = 2.00 });
             newOrder.RemoveItem();
             Assert.Equal(3, newOrder.Total);  //check using the price of the item
+        }
+
+        [Fact]
+        public void Remove_Combo()//Remove a combo from the order (fact).
+        {
+            Order newOrder = new Order();
+            newOrder.AddItem(new FoodItem() { Type = FoodItem.TypeValue.ChickenStrips, Price = 3.00 });
+            newOrder.AddItem(new FoodItem() { Type = FoodItem.TypeValue.FrenchFries, Price = 2.00 });
+
+            Combo newCombo = new Combo()
+            {
+                ComboItems = new List<FoodItem>() { { new FoodItem() { Type = FoodItem.TypeValue.ChickenStrips, Price = 3.00 } }, new FoodItem() { Type = FoodItem.TypeValue.FrenchFries, Price = 2.00 }, new FoodItem() { Type = FoodItem.TypeValue.Drink, Price = 1.00 } }
+            };
+
+            // Remove the combo items from the Items list.
+            newOrder.Items = newOrder.Items.Except(newCombo.ComboItems).ToList();
+
+            Assert.Equal(2, newOrder.ItemCount);  //It should be empty 
         }
     }
 }
