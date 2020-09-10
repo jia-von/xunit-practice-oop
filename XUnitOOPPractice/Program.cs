@@ -7,7 +7,7 @@ namespace XUnitOOPPractice
         static void Main(string[] args)
         {
             Order newOrder = new Order();
-            newOrder.AddItem(new FoodItem() { FoodItems = FoodItem.TypeFood.ChickenStrips });
+
         }
     }
 }
