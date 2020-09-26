@@ -22,10 +22,10 @@ Packages used within this assignment includes:
 
 - Unit tests were created to test the following behaviour:
   - Adding a single item of each type to the order using ***Facts***.
-  - Add a Combo to the order ***Fact***.
-  - Remove a single item from the order ***Fact***.
-  - Remove a combo from the order ***Fact***.
-  - The Combo’s Price reflects the sum of the items minus 20% ***Theory***.
+  - Add a Combo to the order using ***Fact***.
+  - Remove a single item from the order using ***Fact***.
+  - Remove a combo from the order using ***Fact***.
+  - The Combo’s Price reflects the sum of the items minus 20% using ***Theory***.
 
 
 ### Screenshot
