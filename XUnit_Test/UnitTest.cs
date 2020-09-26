@@ -12,9 +12,9 @@ namespace XUnit_Test
         public void Add_Single_Item_Chicken() //Adding a single item of each type to the order (3 facts).
         {
             Order newOrder = new Order();
-            newOrder.AddItem(new FoodItem() { Type = FoodItem.TypeValue.ChickenStrips, Price = 3.00 });
-            FoodItem foodItem = (FoodItem)newOrder.Items[0];
-            Assert.Equal(FoodItem.TypeValue.ChickenStrips, foodItem.Type);
+            FoodItem chicken = new FoodItem() { Type = FoodItem.TypeValue.ChickenStrips, Price = 3.00 };
+            newOrder.AddItem(chicken);
+            Assert.Equal(chicken, newOrder.Items[0]);
         }
 
         [Fact]

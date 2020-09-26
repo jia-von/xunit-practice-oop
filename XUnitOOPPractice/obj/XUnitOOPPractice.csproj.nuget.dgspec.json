@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jvont\\Desktop\\TechCareer\\xunit-practice-oop-jia-von\\XUnitOOPPractice\\XUnitOOPPractice.csproj": {}
+    "C:\\Users\\jvont\\Desktop\\TechCareer\\History\\xunit-practice-oop-jia-von\\XUnitOOPPractice\\XUnitOOPPractice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jvont\\Desktop\\TechCareer\\xunit-practice-oop-jia-von\\XUnitOOPPractice\\XUnitOOPPractice.csproj": {
+    "C:\\Users\\jvont\\Desktop\\TechCareer\\History\\xunit-practice-oop-jia-von\\XUnitOOPPractice\\XUnitOOPPractice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jvont\\Desktop\\TechCareer\\xunit-practice-oop-jia-von\\XUnitOOPPractice\\XUnitOOPPractice.csproj",
+        "projectUniqueName": "C:\\Users\\jvont\\Desktop\\TechCareer\\History\\xunit-practice-oop-jia-von\\XUnitOOPPractice\\XUnitOOPPractice.csproj",
         "projectName": "XUnitOOPPractice",
-        "projectPath": "C:\\Users\\jvont\\Desktop\\TechCareer\\xunit-practice-oop-jia-von\\XUnitOOPPractice\\XUnitOOPPractice.csproj",
+        "projectPath": "C:\\Users\\jvont\\Desktop\\TechCareer\\History\\xunit-practice-oop-jia-von\\XUnitOOPPractice\\XUnitOOPPractice.csproj",
         "packagesPath": "C:\\Users\\jvont\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jvont\\Desktop\\TechCareer\\xunit-practice-oop-jia-von\\XUnitOOPPractice\\obj\\",
+        "outputPath": "C:\\Users\\jvont\\Desktop\\TechCareer\\History\\xunit-practice-oop-jia-von\\XUnitOOPPractice\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jvont\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
